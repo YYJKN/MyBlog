@@ -6,11 +6,8 @@
     <div v-if="$route.path != '/detail'&& $route.path !='/register' && $route.path != '/login' ">
       <Swiper></Swiper>
     </div>
-    <router-view></router-view>
-
-<!--    <Avatar></Avatar>-->
-
-    <!-- <Footer></Footer> -->
+<!--    <router-view></router-view>-->
+    <Layout></Layout>
   </div>
 </template>
 
@@ -19,6 +16,7 @@
   import Swiper from "./components/Swiper.vue";
   import Avatar from "./components/Avatar.vue";
   import Footer from "./views/footer/Footer";
+  import Layout from './layout/Layout'
 
   export default {
     name: "App",
@@ -32,11 +30,9 @@
       Swiper,
       Avatar,
       Footer,
+      Layout
     },
     mounted() {
-      window.onload = () => {
-        this.$store.commit('updateUserInfo',JSON.parse(localStorage.userInfo))
-      }
     }
   };
 </script>

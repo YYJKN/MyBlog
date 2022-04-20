@@ -1,24 +1,28 @@
 <template>
   <div id="home">
-    <Main></Main>
+    <Feature></Feature>
+    <List id="list"></List>
   </div>
 </template>
 
 <script>
-  import Main from './main/Main'
+  import Feature from './Feature.vue'
+  import List from './List.vue'
 
   export default {
     name: "Home",
     components: {
-      Main,
+      Feature,
+      List
     }
   }
 </script>
 
 <style scoped lang="less">
-  .navbar_active {
-    position: absolute !important;
-    background-color: transparent !important;
-  }
-
+@import "@/assets/css/common";
+#list {
+  margin-top: 2vw;
+  margin-bottom: @marginBottom;
+}
 </style>
+

@@ -5,15 +5,16 @@ import Nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 Nprogress.configure({
-  easing: 'ease',  // 动画方式    
-  speed: 5000,  // 递增进度条的速度    
-  showSpinner: false, // 是否显示加载ico    
-  trickleSpeed: 200, // 自动递增间隔    
+  easing: 'ease',  // 动画方式
+  speed: 5000,  // 递增进度条的速度
+  showSpinner: false, // 是否显示加载ico
+  trickleSpeed: 200, // 自动递增间隔
   minimum: 0.3 // 初始化时的最小百分比
 })
 
 
 Vue.use(VueRouter)
+import Layout from "@/layout/Layout";
 
 const Home = require('@/views/home/Home').default
 const Jishu = require('@/views/jishu/Jishu').default
@@ -23,20 +24,36 @@ const About = require('@/views/about/About').default
 const Bbs = require('@/views/bbs/Bbs').default
 const Search = require('@/views/search/Search').default
 
-const Register  = require('@/components/common/Register').default
-const Login  = require('@/components/common/Login').default
+const Register = require('@/components/common/Register').default
+const Login = require('@/components/common/Login').default
 
 const routes = [
-  { path: '/', redirect: '/index' },
-  { path: '/index', component: Home },
-  { path: '/jishu', component: Jishu },
-  { path: '/life', component: Life },
-  { path: '/about', component: About },
-  { path: '/bbs', component: Bbs },
-  { path: '/detail', component: Detail },
-  {path:'/register', component: Register},
-  {path:'/login', component: Login},
-  {path:'/search',name:'search',component:Search}
+
+  {
+    path:'/',
+    redirect:'/index',
+    component: Layout,
+    children: [
+      {path:'/index',component:Home},
+      {path:'/jishu', component: Jishu},
+      {path: '/life', component: Life},
+      {path: '/about', component: About},
+      {path: '/bbs', component: Bbs},
+      {path: '/detail', component: Detail},
+      {path: '/register', component: Register},
+      {path: '/login', component: Login},
+      {path: '/search', name: 'search', component: Search}
+    ]
+  }
+
+  // {path: '/jishu', component: Jishu},
+  // {path: '/life', component: Life},
+  // {path: '/about', component: About},
+  // {path: '/bbs', component: Bbs},
+  // {path: '/detail', component: Detail},
+  // {path: '/register', component: Register},
+  // {path: '/login', component: Login},
+  // {path: '/search', name: 'search', component: Search}
 ]
 
 const router = new VueRouter({
@@ -53,7 +70,7 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-router.afterEach((to,from) => {
+router.afterEach((to, from) => {
   // Nprogress.done()
 })
 export default router

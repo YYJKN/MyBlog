@@ -42,7 +42,6 @@
 
         // 存储 store
 				this.$store.commit('updateUserInfo',data.userInfo)
-        localStorage.token = data.token
 				this.$router.push('/index')
 
 			}
