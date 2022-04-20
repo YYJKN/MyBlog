@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Main></Main>
+    <List></List>
   </div>
 </template>
 <script>
-import Main from "./main/Main";
+import List from "./List";
 export default {
   data() {
     return {};
   },
   components: {
-    Main
+    List
   },
 };
 </script>

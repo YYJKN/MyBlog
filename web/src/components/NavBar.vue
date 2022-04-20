@@ -11,7 +11,6 @@
             >
           </div>
         </div>
-
         <div class="middle">
           <el-input
             v-model="keyword"
@@ -23,7 +22,6 @@
           >
           </el-input>
         </div>
-
         <div class="right" id="right">
           <div v-if="!avatarShow">
             <span class="item" @click="login">登录</span>
@@ -135,7 +133,6 @@
             }
           }
 
-
         } else {
           document.querySelector("#navbar").classList.remove("navbar");
           document.querySelector("#navbar").classList.add("navbar_active");
@@ -227,18 +224,12 @@
     color: white;
   }
 
-  /*.search {*/
-  /*  width: 20vw;*/
-  /*  background-color: transparent !important;*/
-  /*}*/
   .middle {
     flex: 1;
     margin-left: -2vw;
   }
 
   .right {
-    /*margin-left: 10%;*/
-    /*padding-right:10vw;*/
     flex: 1;
     display: flex;
     justify-content: flex-start;

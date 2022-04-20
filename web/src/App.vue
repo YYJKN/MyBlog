@@ -2,6 +2,7 @@
   <div id="app">
     <div  v-if=" $route.path !='/register' && $route.path != '/login' ">
       <NavBar ></NavBar>
+      <JishuNavBar v-show="$route.path=='/jishu'"></JishuNavBar>
     </div>
     <div v-if="$route.path != '/detail'&& $route.path !='/register' && $route.path != '/login' ">
       <Swiper></Swiper>
@@ -13,6 +14,7 @@
 
 <script>
   import NavBar from "./components/NavBar";
+  import JishuNavBar from "./components/JishuNavBar";
   import Swiper from "./components/Swiper.vue";
   import Avatar from "./components/Avatar.vue";
   import Footer from "./views/footer/Footer";
@@ -30,7 +32,8 @@
       Swiper,
       Avatar,
       Footer,
-      Layout
+      Layout,
+      JishuNavBar
     },
     mounted() {
     }

@@ -2,10 +2,6 @@
   <div id="list">
     <div class="top">
       <span>排序方式</span>
-      <!--      <span @click="getPages('id')">时间</span>-->
-      <!--      <span @click="getPages('views')">热度</span>-->
-      <!--      <span @click="getPages('comments')">评论</span>-->
-      <!--      <span @click="getPages('stars')">收藏</span>-->
       <span v-for="(item,index) in arr" :key="index" @click="getPages(item[1],index)" :class="{spanActive:isActive ==index}">
         {{item[0]}}
       </span>

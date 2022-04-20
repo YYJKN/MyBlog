@@ -1,23 +1,16 @@
 <template>
   <div id="jishi">
-    <NavBar2></NavBar2>
-    <Main></Main>
+    <List></List>
   </div>
 </template>
 
 <script>
-  import NavBar from "@/components/NavBar";
-  import Main from './main/Main'
-  import NavBar2 from "./NavBar2";
-  import Swiper from "../../components/Swiper";
+  import List from "./List";
 
   export default {
     name: "Jishu",
     components: {
-      NavBar,
-      Main,
-      NavBar2,
-      Swiper
+      List
     },
     mounted() {
 

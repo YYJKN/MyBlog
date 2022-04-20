@@ -49,11 +49,16 @@ export default {
 
 <style scoped lang="less">
 @import "@/assets/css/common";
+
+.navbar_active {
+  position: absolute !important;
+  background-color: transparent !important;
+}
+
 #navbar2 {
   position: fixed;
   top: @navbarHeight;
   z-index: 100;
-
   background-color: white;
   height: 5vh;
 

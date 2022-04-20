@@ -1,18 +1,19 @@
 <template>
-  <div>
-    <Main></Main>
+  <div id="list">
+    <Comment></Comment>
   </div>
 </template>
+
 <script>
-import Main from "./main/Main";
-export default {
-  data() {
-    return {};
-  },
-  components: {
-    Main
-  },
-};
+  import Comment from "@/components/Comment";
+  export default {
+    name: "Bbs",
+    components: {
+      Comment
+    }
+  }
 </script>
-<style scoped>
+
+<style scoped lang="less">
+
 </style>
