@@ -1,7 +1,7 @@
 <template>
   <div id="swiper" @scroll="scroll($event)">
     <div class="swiper">
-      <img src="@/assets/images/bg7.jpg" />
+      <img :src="$baseURL+ '/'+  cover"  ref="swiperImg"/>
 <!--      <span class="title">{{ sign }}</span>-->
       <!--      class="icon animate__animated animate__slow animate__fadeInDown animate__infinite"-->
       <!-- <div class="icon" @click="handleClick">
@@ -14,6 +14,11 @@
 <script>
 export default {
   name: "Swiper",
+  data() {
+    return {
+      cover:'280b887e7a96fcd1c0f54dd27aed5ab8'
+    }
+  },
   methods: {
     handleClick() {
       window.scrollTo(0, window.innerHeight * 0.4);
@@ -33,7 +38,12 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() {
+    this.$bus.$on('getSwiperImg',(cover) =>{
+      this.cover = cover
+      console.log(cover)
+    })
+  },
 };
 </script>
 
@@ -48,6 +58,7 @@ export default {
   // 背景图片大小
   img {
     width: 100%;
+    height: 100%;
     /*height: 150%;*/
   }
   .title {

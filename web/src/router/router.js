@@ -29,6 +29,8 @@ const Login = require('@/components/common/Login').default
 
 const routes = [
 
+  {path: '/register', component: Register},
+  {path: '/login', component: Login},
   {
     path:'/',
     redirect:'/index',
@@ -44,15 +46,15 @@ const routes = [
       {path: '/login', component: Login},
       {path: '/search', name: 'search', component: Search}
     ]
-  }
+  },
+
 
   // {path: '/jishu', component: Jishu},
   // {path: '/life', component: Life},
   // {path: '/about', component: About},
   // {path: '/bbs', component: Bbs},
   // {path: '/detail', component: Detail},
-  // {path: '/register', component: Register},
-  // {path: '/login', component: Login},
+
   // {path: '/search', name: 'search', component: Search}
 ]
 

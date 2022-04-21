@@ -1,21 +1,11 @@
 <template>
   <div id="app">
-    <div  v-if=" $route.path !='/register' && $route.path != '/login' ">
-      <NavBar ></NavBar>
-      <JishuNavBar v-show="$route.path=='/jishu'"></JishuNavBar>
-    </div>
-    <div v-if="$route.path != '/detail'&& $route.path !='/register' && $route.path != '/login' ">
-      <Swiper></Swiper>
-    </div>
-<!--    <router-view></router-view>-->
-    <Layout></Layout>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import NavBar from "./components/NavBar";
-  import JishuNavBar from "./components/JishuNavBar";
-  import Swiper from "./components/Swiper.vue";
+
   import Avatar from "./components/Avatar.vue";
   import Footer from "./views/footer/Footer";
   import Layout from './layout/Layout'
@@ -28,14 +18,9 @@
       };
     },
     components: {
-      NavBar,
-      Swiper,
       Avatar,
       Footer,
-      Layout,
-      JishuNavBar
-    },
-    mounted() {
+      Layout
     }
   };
 </script>

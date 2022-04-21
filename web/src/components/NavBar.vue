@@ -112,7 +112,7 @@
       },
 
       handleScroll() {
-        let aboutHeight = document.querySelector("#about").offsetHeight
+        // let aboutHeight = document.querySelector("#about").offsetHeight
         let scrollTop = window.pageYOffset;
 
         if (scrollTop >= window.innerHeight * 0.25) {
@@ -123,15 +123,15 @@
 
           // sidebar 的占位
           let path = this.$route.path
-          if (path == '/detail') {
-            document.querySelector("#sidebar").classList.add("sidebar_active");
-            document.querySelector("#sidebar").classList.remove("sidebar");
-            if (scrollTop > window.innerHeight * 0.48 + aboutHeight) {
-              document.querySelector("#toc2").classList.add('toc_active')
-            } else {
-              document.querySelector("#toc2").classList.remove('toc_active')
-            }
-          }
+          // if (path == '/detail') {
+          //   document.querySelector("#sidebar").classList.add("sidebar_active");
+          //   document.querySelector("#sidebar").classList.remove("sidebar");
+          //   if (scrollTop > window.innerHeight * 0.48 + aboutHeight) {
+          //     document.querySelector("#toc2").classList.add('toc_active')
+          //   } else {
+          //     document.querySelector("#toc2").classList.remove('toc_active')
+          //   }
+          // }
 
         } else {
           document.querySelector("#navbar").classList.remove("navbar");
