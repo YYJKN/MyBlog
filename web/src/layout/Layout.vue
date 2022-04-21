@@ -2,14 +2,16 @@
   <div id="layout">
     <NavBar></NavBar>
     <Swiper></Swiper>
-    <div id="left">
-      <router-view></router-view>
-    </div>
+    <JishuNavBar v-if="$route.path=='/jishu'"></JishuNavBar>
     <div id="right">
       <About></About>
       <Recent></Recent>
       <OverView></OverView>
     </div>
+    <div id="left">
+      <router-view></router-view>
+    </div>
+
   </div>
 
 </template>
@@ -21,6 +23,7 @@
   import About from "../components/About";
   import Recent from "../components/Recent";
   import OverView from "../components/OverView";
+  import JishuNavBar from "../components/JishuNavBar";
 
   export default {
     name: "index",
@@ -29,7 +32,8 @@
       Swiper,
       About,
       Recent,
-      OverView
+      OverView,
+      JishuNavBar
     },
     created() {
     }
@@ -39,23 +43,22 @@
 <style scoped lang="less">
   @import "@/assets/css/common";
 
-  #left {
-    /*position: absolute;*/
-    float:left;
-    margin-left: 8vw;
-
-    margin-top:@zhanweiHeight;
-    /*left: 10%;*/
-    width: 60%;
-    /*z-index: 1;*/
+  #layout {
+    margin-bottom: 20vh;
     background-color: @backgroundColor;
+  }
+  #left {
+    overflow: hidden;
+    padding-left: 10vw;
+    padding-right: 5vw;
+    margin-top:@zhanweiHeight;
   }
 
   #right {
+    float:right;
+    width:20%;
     margin-top:@zhanweiHeight;
-    overflow: hidden;
-    padding-left:5vw;
-    padding-right:8vw;
+    margin-right:10vw;
   }
 
 </style>
