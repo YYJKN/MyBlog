@@ -47,15 +47,6 @@ const routes = [
       {path: '/search', name: 'search', component: Search}
     ]
   },
-
-
-  // {path: '/jishu', component: Jishu},
-  // {path: '/life', component: Life},
-  // {path: '/about', component: About},
-  // {path: '/bbs', component: Bbs},
-  // {path: '/detail', component: Detail},
-
-  // {path: '/search', name: 'search', component: Search}
 ]
 
 const router = new VueRouter({

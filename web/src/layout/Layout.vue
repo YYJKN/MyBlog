@@ -6,7 +6,8 @@
     <div id="right">
       <About></About>
       <Recent></Recent>
-      <OverView></OverView>
+<!--      <OverView></OverView>-->
+      <Summary></Summary>
     </div>
     <div id="left">
       <router-view></router-view>
@@ -24,6 +25,7 @@
   import Recent from "../components/Recent";
   import OverView from "../components/OverView";
   import JishuNavBar from "../components/JishuNavBar";
+  import Summary from "@/components/Summary";
 
   export default {
     name: "index",
@@ -33,7 +35,8 @@
       About,
       Recent,
       OverView,
-      JishuNavBar
+      JishuNavBar,
+      Summary
     },
     created() {
     }
@@ -49,7 +52,7 @@
   }
   #left {
     overflow: hidden;
-    padding-left: 10vw;
+    padding-left: 15vw;
     padding-right: 5vw;
     margin-top:@zhanweiHeight;
   }
@@ -58,7 +61,7 @@
     float:right;
     width:20%;
     margin-top:@zhanweiHeight;
-    margin-right:10vw;
+    margin-right:15vw;
   }
 
 </style>
