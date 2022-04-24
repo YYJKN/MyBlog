@@ -10,7 +10,6 @@
         <Recent></Recent>
         <Summary></Summary>
       </template>
-
     </div>
     <div id="left">
       <SideBar v-if="$route.path=='/detail'"></SideBar>

@@ -8,7 +8,7 @@
         <span><i class="el-icon-star-off">{{completeInfo.stars}}</i></span>
       </div>
       <!-- 文章 -->
-      <div class="markdown-content" v-html="content"></div>
+      <div class="markdown-content" v-html="content" v-if="article.name"></div>
 
       <Comment class="comment"></Comment>
 

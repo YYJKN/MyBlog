@@ -18,12 +18,6 @@ Vue.prototype.$baseURL = process.env.VUE_APP_BASEURL
 
 console.log(Vue.prototype.$baseURL)
 
-if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
-}
-
-
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
