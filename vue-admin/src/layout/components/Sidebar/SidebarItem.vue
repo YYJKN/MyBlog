@@ -51,6 +51,8 @@ export default {
     }
   },
   data() {
+    // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
+    // TODO: refactor with render function
     this.onlyOneChild = null
     return {}
   },
@@ -60,6 +62,7 @@ export default {
         if (item.hidden) {
           return false
         } else {
+          // Temp set(will be used if only has one showing child)
           this.onlyOneChild = item
           return true
         }

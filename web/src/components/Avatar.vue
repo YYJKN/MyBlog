@@ -56,7 +56,6 @@
           email:this.$store.state.userInfo.email
         }
         let res = await this.$img.post('/updateAvatar',data)
-        console.log(res.data)
         this.$store.state.userInfo.avatar = res.data.avatar
         this.$message.success("更换头像成功")
       },
@@ -66,7 +65,6 @@
       }
     },
     created() {
-      console.log(this.isShow)
       this.getAvatarList()
     }
   }

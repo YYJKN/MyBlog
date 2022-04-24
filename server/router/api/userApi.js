@@ -39,3 +39,27 @@ exports.login = async (req, res) => {
 
   res.send({ message: "登录成功", token, userInfo: { email, avatar: data.avatar, username: data.username } })
 }
+
+exports.query = async (req, res) => {
+  const {size,page} = req.body
+  const data = await User.findAll()
+  const total = data.length
+  const list = data.slice(size * (page - 1), size * page)
+  res.status(200).send({ userList: list, total: total })
+}
+
+exports.queryOne = async (req, res) => {
+  const data = await User.findOne({
+    where:{
+      id:req.query.id
+    }
+  })
+  console.log(data);
+  res.send({userInfo:data})
+}
+
+exports.setAuth = async (req, res) => {
+  const {id,auth} = req.body
+  await User.update({auth},{where:{id}})
+  res.send({msg:"修改成功"})
+}

@@ -30,7 +30,7 @@ export default {
       if(this.$route.path != '/jishu')
         return
       let scrollTop = window.pageYOffset;
-      if (scrollTop >= window.innerHeight * 0.3) {
+      if (scrollTop >= window.innerHeight * 0.5) {
         document.querySelector("#navbar2").classList.add("navbar");
         document.querySelector("#navbar2").classList.remove("navbar_active");
 

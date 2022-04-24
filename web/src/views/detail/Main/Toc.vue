@@ -40,6 +40,12 @@
 <style scoped lang='less'>
   @import "@/assets/css/common";
 
+  .toc_active {
+    position: fixed;
+    top:@navbarHeight;
+    width: 17vw;
+  }
+
   #toc2 {
     margin-top: 4vh;
     padding: 1rem;
@@ -72,7 +78,6 @@
 
   #toc {
     box-sizing: border-box;
-    width: 15vw;
     left: -1vw;
     padding-top: 0.2rem;
     padding-right: 0.2rem;

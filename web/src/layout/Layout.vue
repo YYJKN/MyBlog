@@ -5,11 +5,15 @@
     <JishuNavBar v-if="$route.path=='/jishu'"></JishuNavBar>
     <div id="right">
       <About></About>
-      <Recent></Recent>
-<!--      <OverView></OverView>-->
-      <Summary></Summary>
+      <Toc v-if="$route.path=='/detail'"> </Toc>
+      <template v-else>
+        <Recent></Recent>
+        <Summary></Summary>
+      </template>
+
     </div>
     <div id="left">
+      <SideBar v-if="$route.path=='/detail'"></SideBar>
       <router-view></router-view>
     </div>
 
@@ -26,7 +30,8 @@
   import OverView from "../components/OverView";
   import JishuNavBar from "../components/JishuNavBar";
   import Summary from "@/components/Summary";
-
+  import SideBar from "../views/detail/Main/SideBar";
+  import Toc from "../views/detail/Main/Toc";
   export default {
     name: "index",
     components: {
@@ -36,7 +41,9 @@
       Recent,
       OverView,
       JishuNavBar,
-      Summary
+      Summary,
+      SideBar,
+      Toc
     },
     created() {
     }
@@ -48,6 +55,7 @@
 
   #layout {
     margin-bottom: 20vh;
+    /*background-color: blue;*/
     background-color: @backgroundColor;
   }
   #left {
@@ -58,6 +66,7 @@
   }
 
   #right {
+    /*background-color: red;*/
     float:right;
     width:20%;
     margin-top:@zhanweiHeight;

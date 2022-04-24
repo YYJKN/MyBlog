@@ -7,4 +7,11 @@ router.post('/register',user.register)
 
 router.post('/login', user.login)
 
+router.post('/query', user.query)
+
+router.get('/queryOne', user.queryOne)
+
+router.post('/setAuth', user.setAuth)
+
+
 module.exports = router

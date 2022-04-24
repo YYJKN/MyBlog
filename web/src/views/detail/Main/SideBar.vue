@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar2">
+  <div id="sidebar">
     <div class="item" @click="thumbUpOrStar('thumbUp')">
       <img src="@/assets/images/thumbUp.png" v-if="!isThumbUp">
       <img src="@/assets/images/thumbUp_active.png" v-else>
@@ -72,6 +72,18 @@
   };
 </script>
 <style scoped lang="less">
+  @import "@/assets/css/common";
+
+  #sidebar {
+    position:absolute;
+    left:8vw
+  }
+
+  .sidebar_active {
+    position:fixed !important;
+    left: 8vw;
+    top:@navbarHeight + @zhanweiHeight;
+  }
   .item {
     display: flex;
     justify-content: center;
@@ -99,7 +111,7 @@
 
 <style lang="less" scoped>
   @media screen and (max-width:1024px) {
-    #sidebar2 {
+    #sidebar {
       display: none;
     }
   }
