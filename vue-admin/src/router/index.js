@@ -25,6 +25,7 @@ export const constantRoutes = [
     }]
   },
 
+  // 用户管理
   {
     path: '/user',
     component: Layout,
@@ -53,6 +54,20 @@ export const constantRoutes = [
         meta: {title:"用户编辑",icon:'el-icon-setting'}
       }
       ]
+  },
+
+  // 文章管理
+  {
+    path: '/article',
+    name:'article',
+    meta:{title: '文章管理', icon: 'el-icon-tickets'},
+    component:Layout,
+    // redirect:'/article/index',
+    // children:[{
+    //   path:'index',
+    //   name:'文章列表'
+    // }]
+
   },
 
   // 404 page must be placed at the end !!!
