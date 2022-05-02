@@ -32,7 +32,7 @@ export const constantRoutes = [
     name: 'user',
     meta: {title: '用户管理', icon: 'user'},
     redirect: '/user/index',
-    alwaysShow:true,
+    alwaysShow: true,
     children: [{
       path: 'index',
       name: 'index',
@@ -40,20 +40,41 @@ export const constantRoutes = [
       meta: {title: "用户列表", icon: 'el-icon-s-order'}
     },
       {
+        path: 'view',
+        name: 'view',
+        hidden: true,
+        component: () => import('@/views/user/edit'),
+        meta: {title: "查看用户", icon: 'el-icon-setting'}
+      },
+      {
+        path: 'edit',
+        name: 'edit',
+        hidden: true,
+        component: () => import('@/views/user/edit'),
+        meta: {title: "用户编辑", icon: 'el-icon-setting'}
+      }
+    ]
+  },
+  {
+    path: '/article',
+    component: Layout,
+    name:'article',
+    meta: {title:'文章管理',icon:'el-icon-tickets'},
+    redirect: '/article/index',
+    alwaysShow: true,
+    children: [{
+      path:'index',
+      name:'index',
+      component: () => import('@/views/article/index'),
+      meta: {title:'文章列表', icon:'el-icon-s-order'}
+    },
+      {
         path:'view',
         name:'view',
         hidden:true,
-        component: () => import('@/views/user/edit'),
-        meta: {title:"查看用户",icon:'el-icon-setting'}
-      },
-      {
-        path:'edit',
-        name:'edit',
-        hidden:true,
-        component: () => import('@/views/user/edit'),
-        meta: {title:"用户编辑",icon:'el-icon-setting'}
-      }
-      ]
+        component: () => import('@/views/article/index'),
+        meta: {title:'文章编辑', icon:'el-icon-s-order'}
+      }]
   },
 
   // 文章管理

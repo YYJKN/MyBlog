@@ -13,6 +13,7 @@
 
 <script>
   import {userQuery} from "@/network/apis/user";
+  import {articleQuery} from "@/network/apis/article";
 
   export default {
     name: "page",
@@ -45,7 +46,8 @@
             this.$emit('pageQueryFinish',res.data)
             break;
           case 'article':
-            break
+            let res2 = await articleQuery({size:this.size2,page:this.page2,type:'home'})
+            console.log(res2)
           default:
             break
         }
