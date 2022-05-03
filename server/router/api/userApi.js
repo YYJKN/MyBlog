@@ -54,7 +54,6 @@ exports.queryOne = async (req, res) => {
       id:req.query.id
     }
   })
-  console.log(data);
   res.send({userInfo:data})
 }
 

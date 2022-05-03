@@ -17,6 +17,9 @@ const comment = axios.create({
 const img = axios.create({
   baseURL:process.env.VUE_APP_BASEURL + '/img'
 })
+const log = axios.create({
+  baseURL:process.env.VUE_APP_BASEURL + '/log'
+})
 
 user.interceptors.response.use(res => {
   return res
@@ -24,4 +27,4 @@ user.interceptors.response.use(res => {
   element.Message.error(err.response.data.message)
 })
 
-export { article,user ,comment,img}
+export { article,user ,comment,img,log}

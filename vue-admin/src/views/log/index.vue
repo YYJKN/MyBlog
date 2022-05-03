@@ -25,34 +25,34 @@
 </template>
 
 <script>
-import page from "@/components/page";
-import {deleteArticle} from "@/network/apis/article";
+  import page from "@/components/page";
+  import {deleteArticle} from "@/network/apis/article";
 
-export default {
-  name: "index",
-  data() {
-    return {
-      size:5,
-      articleList:[]
-    }
-  },
-  components:{
-    page
-  },
-  methods: {
-    handlePageQueryFinish(data) {
-      this.articleList = data
+  export default {
+    name: "index",
+    data() {
+      return {
+        size:5,
+        logList:[]
+      }
     },
-    handleEdit(id) {
-      this.$router.push(`/article/edit/${id}`)
+    components:{
+      page
     },
-    async handleDelete(id) {
-      await deleteArticle(id)
-      this.$message.success('删除文章成功')
-      this.$refs.page.queryList()
-    }
-  },
-}
+    methods: {
+      handlePageQueryFinish(data) {
+        this.articleList = data
+      },
+      handleEdit(id) {
+        this.$router.push(`/article/edit/${id}`)
+      },
+      async handleDelete(id) {
+        await deleteArticle(id)
+        this.$message.success('删除文章成功')
+        this.$refs.page.queryList()
+      }
+    },
+  }
 </script>
 
 <style scoped>

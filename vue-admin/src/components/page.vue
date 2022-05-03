@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="page">
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
@@ -13,7 +13,7 @@
 
 <script>
   import {userQuery} from "@/network/apis/user";
-  import {articleQuery} from "@/network/apis/article";
+  import {queryArticle} from "@/network/apis/article";
 
   export default {
     name: "page",
@@ -39,15 +39,19 @@
     },
     methods: {
       async queryList() {
+
+        let res = {}
         switch (this.type) {
           case 'user':
-            const res = await userQuery({size:this.size2,page:this.page2})
+            res = await userQuery({size:this.size2,page:this.page2})
             this.total2 = res.data.total
             this.$emit('pageQueryFinish',res.data)
             break;
           case 'article':
-            let res2 = await articleQuery({size:this.size2,page:this.page2,type:'home'})
-            console.log(res2)
+            res = await queryArticle({size:this.size2,page:this.page2,type:'home',sort:{type:'views'}})
+            this.total2 = res.data.total
+            this.$emit('pageQueryFinish',res.data.lists)
+            break
           default:
             break
         }
@@ -68,5 +72,7 @@
 </script>
 
 <style scoped>
-
+ #page {
+   margin:5vh 0
+ }
 </style>

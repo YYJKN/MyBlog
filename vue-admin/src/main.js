@@ -2,6 +2,9 @@ import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -16,9 +19,9 @@ import '@/permission' // permission control
 
 Vue.prototype.$baseURL = process.env.VUE_APP_BASEURL
 
-console.log(Vue.prototype.$baseURL)
 
 Vue.use(ElementUI)
+Vue.use(mavonEditor)
 
 Vue.config.productionTip = false
 

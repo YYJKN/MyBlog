@@ -58,36 +58,44 @@ export const constantRoutes = [
   {
     path: '/article',
     component: Layout,
-    name:'article',
-    meta: {title:'文章管理',icon:'el-icon-tickets'},
+    name: 'article',
+    meta: {title: '文章管理', icon: 'el-icon-tickets'},
     redirect: '/article/index',
+    alwaysShow: true,
+    children: [{
+      path: 'index',
+      name: 'index',
+      meta: {title: '文章列表', icon: 'el-icon-s-order'},
+      component: () => import('@/views/article/index')
+    },
+      {
+        path: 'create',
+        name: 'create',
+        meta: {title: '创建文章', icon: 'el-icon-s-order'},
+        component: () => import('@/views/article/create')
+      },
+      {
+        path: 'edit/:id',
+        name: 'edit',
+        hidden: true,
+        meta: {title: '创建文章', icon: 'el-icon-s-order'},
+        component: () => import('@/views/article/create')
+      },
+    ]
+  },
+  {
+    path:'/log',
+    name:'log',
+    meta:{title:'日志管理',icon:'el-icon-setting'},
+    component: Layout,
+    redirect:'/log/index',
     alwaysShow: true,
     children: [{
       path:'index',
       name:'index',
-      component: () => import('@/views/article/index'),
-      meta: {title:'文章列表', icon:'el-icon-s-order'}
-    },
-      {
-        path:'view',
-        name:'view',
-        hidden:true,
-        component: () => import('@/views/article/index'),
-        meta: {title:'文章编辑', icon:'el-icon-s-order'}
-      }]
-  },
-
-  // 文章管理
-  {
-    path: '/article',
-    name:'article',
-    meta:{title: '文章管理', icon: 'el-icon-tickets'},
-    component:Layout,
-    // redirect:'/article/index',
-    // children:[{
-    //   path:'index',
-    //   name:'文章列表'
-    // }]
+      meta:{title:'日志查看',icon:'el-icon-setting'},
+      component: () => import('@/views/log/index')
+    }]
 
   },
 

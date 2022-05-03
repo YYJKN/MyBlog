@@ -4,6 +4,7 @@ const Caozuo = require('./caozuo')
 const Comment = require('./comment')
 const User = require('./user')
 const Caozuo2 = require('./caozuo2')
+const Log = require('./log')
 
 Caozuo.belongsTo(Article)
 
@@ -46,4 +47,12 @@ Comment.sync()
   })
   .catch(err => {
     console.log('Caozuo2表', err);
+  })
+
+  Log.sync()
+  .then(res => {
+    console.log("Log表模型同步成功");
+  })
+  .catch(err => {
+    console.log('Log表', err);
   })

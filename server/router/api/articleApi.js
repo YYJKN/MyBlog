@@ -108,6 +108,11 @@ exports.countNum = async (req, res) => {
 // 分页查询
 exports.getPages = async (req, res) => {
   const { size, page, type, sort } = req.body
+  if(!sort) {
+    sort = {
+      type:'id'
+    }
+  }
   if (type == 'home') {
     const data = await Caozuo.findAll({
       include: [{
